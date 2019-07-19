@@ -1,5 +1,10 @@
 # phalcon-study
 
+### Tradução
+> Em todas as requisiçoes, envie no header a informação `phalcon-lang-default`
+com o valor: **`en`** ou **`ptbr`** para selecionar o idioma das mensagens de feedback 
+das ações
+
 ### list Authors
 
 > GET http://_DNS_/authors
@@ -44,7 +49,7 @@
 ```
 
 >> Response json success
->>> status code success: *201*
+>>> status code success: **201**
 ```json  
 {
     "message": "OK"
@@ -52,7 +57,7 @@
 ```
 
 >> Response json error
->>> status code success: *400*
+>>> status code success: **400**
 ```json  
 {
     "message": "_MSG_ERROR"
@@ -73,14 +78,14 @@
 ```
 
 >> Response json success
->>> status code: *200*
+>>> status code: **200**
 ```json  
 {
     "message": "OK"
 }
 ```
 >> Response json error
->>> status code: *400*
+>>> status code: **400**
 ```json  
 {
     "message": "_MSG_ERROR"
@@ -92,14 +97,14 @@
 > DELETE http://_DNS_/authors/{_oid}
 
 >> Response json success
->>> status code: *200*
+>>> status code: **200**
 ```json  
 {
     "message": "OK"
 }
 ```
 >> Response json error
->>> status code: *400*
+>>> status code: **400**
 ```json  
 {
     "message": "_MSG_ERROR"
