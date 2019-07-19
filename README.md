@@ -3,8 +3,11 @@
 ## Tecnologia utilizada
 
 >> Framework Phalcon
+
 >> MongoDB
+
 >> Nginx
+
 >> Ambiente de desenvolvimento utilizando Docker containners
 
 ## Banco de Dados
