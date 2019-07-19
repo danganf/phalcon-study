@@ -2,13 +2,7 @@
 
 ## Tecnologia utilizada
 
->> Framework Phalcon
-
->> MongoDB
-
->> Nginx
-
->> Ambiente de desenvolvimento utilizando Docker containners
+> Framework Phalcon, MongoDB, Nginx e Ambiente de desenvolvimento utilizando Docker containners
 
 ## Banco de Dados
 >>> base: music
