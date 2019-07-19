@@ -15,6 +15,7 @@ return new \Phalcon\Config([
         'dbname'      => 'test',
         'charset'     => 'utf8',
     ],
+    'transalation' => 'ptbr',
     'application' => [
         'appDir'         => APP_PATH . '/',
         'controllersDir' => APP_PATH . '/controllers/',

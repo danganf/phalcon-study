@@ -20,14 +20,14 @@ class AuthorsController extends ControllerBase
             $author->phone   = $json->phone;
             $author->dob     = $json->dob;
             $author->save();
-            return $this->helper->msgSuccess('OK', 201);
+            return $this->helper->msgSuccess( $this->lang->t("yes")  , 201);
 
         }
-        return $this->helper->msgError('Json invalido');
+        return $this->helper->msgError( $this->lang->t("json_invalid") );
     }
     public function updateAction($oid){
 
-        $msg  = 'Json invalido';
+        $msg  = $this->lang->t("json_invalid") ;
         $json = $this->request->getJsonRawBody();
         if( !empty( $json ) ){
             $author = Author::findById($oid);
@@ -37,9 +37,9 @@ class AuthorsController extends ControllerBase
                 $author->phone = $json->phone;
                 $author->dob = $json->dob;
                 $author->save();
-                return $this->helper->msgSuccess('OK');
+                return $this->helper->msgSuccess( $this->lang->t("yes")  );
             } else {
-                $msg = 'registro nao encontrado';
+                $msg = $this->lang->t("register_not_found");
             }
 
         }
@@ -52,10 +52,10 @@ class AuthorsController extends ControllerBase
             if( $author->delete() ) {
                 return $this->helper->msgSuccess('OK');
             } else {
-                $msg = 'Ocorreu uma falha ao deleter o registro';
+                $msg = $this->lang->t("ops_delete");;
             }
         } else {
-            $msg = 'registro nao encontrado';
+            $msg = $this->lang->t("json_invalid");
         }
 
         return $this->helper->msgError($msg);

@@ -8,7 +8,7 @@ use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
 use Phalcon\Flash\Direct as Flash;
 use Phalcon\Mvc\Collection\Manager;
-
+use Phalcon\Translate\Adapter\ResourceBundle;
 /**
  * Shared configuration service
  */
@@ -85,6 +85,25 @@ $di->setShared('collectionManager', function () {
  */
 $di->setShared('modelsMetadata', function () {
     return new MetaDataAdapter();
+});
+
+$di->setShared('lang', function () use ($di) {
+
+    $config  = $this->getConfig();
+    $lang    = $di->getShared('request')->getHeader('phalcon-lang-default');
+    $lang    = !empty( $lang ) ? $lang : $config->transalation;
+
+    if( !file_exists( APP_PATH . "/messages/".$lang.".php" ) ){
+        $lang = $config->transalation;
+    }
+
+    require APP_PATH . "/messages/".$lang.".php";
+
+    // Return a translation object
+    return new \Phalcon\Translate\Adapter\NativeArray(array(
+        "content" => $messages
+    ));
+
 });
 
 /**
