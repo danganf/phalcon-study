@@ -32,7 +32,6 @@ class AuthorsController extends ControllerBase
         if( !empty( $json ) ){
             $author = Author::findById($oid);
             if( !empty( $author ) ){
-                //$this->helper->dd( $this->helper->objectToArray( $author ) );
                 $author->name = $json->name;
                 $author->address = $json->address;
                 $author->phone = $json->phone;
@@ -45,6 +44,22 @@ class AuthorsController extends ControllerBase
 
         }
         return $this->helper->msgError($msg);
+    }
+    public function deleteAction($oid){
+
+        $author = Author::findById($oid);
+        if( !empty( $author ) ){
+            if( $author->delete() ) {
+                return $this->helper->msgSuccess('OK');
+            } else {
+                $msg = 'Ocorreu uma falha ao deleter o registro';
+            }
+        } else {
+            $msg = 'registro nao encontrado';
+        }
+
+        return $this->helper->msgError($msg);
+
     }
 
 }
