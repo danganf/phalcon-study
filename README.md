@@ -1,5 +1,18 @@
 # phalcon-study
 
+## Tecnologia utilizada
+
+>> Framework Phalcon
+>> MongoDB
+>> Nginx
+>> Ambiente de desenvolvimento utilizando Docker containners
+
+## Banco de Dados
+>>> base: music
+
+>>> collection: author
+
+
 ### Tradução
 > Em todas as requisiçoes, envie no header a informação `phalcon-lang-default`
 com o valor: **`en`** ou **`ptbr`** para selecionar o idioma das mensagens de feedback 
