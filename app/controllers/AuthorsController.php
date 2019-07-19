@@ -20,7 +20,7 @@ class AuthorsController extends ControllerBase
             $author->phone   = $json->phone;
             $author->dob     = $json->dob;
             $author->save();
-            return $this->helper->msgSuccess('OK');
+            return $this->helper->msgSuccess('OK', 201);
 
         }
         return $this->helper->msgError('Json invalido');
