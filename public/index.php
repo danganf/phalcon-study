@@ -42,13 +42,6 @@ try {
         return include __DIR__ . '/../app/config/router.php';
     }, true);
 
-    //MongoDB Database
-    $di->set('MongoDB', function () use ($config) {
-        $mongoClient = new \Phalcon\Db\Adapter\MongoDB\Client("mongodb://127.0.0.1:27017");
-        exit(var_dump($mongoClient->selectDatabase('music')));
-        return $mongoClient->selectDatabase('music'); // unchanged
-    }, TRUE);
-
     /**
      * Handle the request
      */
