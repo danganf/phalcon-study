@@ -33,8 +33,7 @@
 ### new Author
 
 > POST http://_DNS_/authors
-
-> Request body raw
+>> Request body raw
 ```json  
 {
 	"name": "daniel azevedo",
@@ -44,16 +43,16 @@
 }
 ```
 
-> Response json success
->> status code success: *201*
+>> Response json success
+>>> status code success: *201*
 ```json  
 {
     "message": "OK"
 }
 ```
 
-> Response json error
->> status code success: *400*
+>> Response json error
+>>> status code success: *400*
 ```json  
 {
     "message": "_MSG_ERROR"
@@ -63,7 +62,6 @@
 ### Edit Author
 
 > PUT http://_DNS_/authors/{_oid}
-
 >> Request body raw
 ```json  
 {
